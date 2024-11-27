@@ -22,7 +22,6 @@ Follow these steps to set up the project locally:
 1. **Install the required dependencies:**
 
 
-Copy code
 pip install -r requirements.txt
 Make sure you have Python 3.x and pip installed.
 
@@ -34,14 +33,10 @@ After installing dependencies, you can run the detection system.
 ### Training the Model
 To train the model with your custom dataset, use the following command:
 
-bash
-Copy code
 !yolo task=detect mode=train model=yolo11s.pt data=/content/drive/MyDrive/Poker_Chips_Detection_YOLO/data.yaml epochs=10 imgsz=640 plots=True
 ### Running inference:
 For predicting poker chip colors in test images:
 
-bash
-Copy code
 !yolo task=detect mode=predict model=runs/detect/train/weights/best.pt conf=0.25 source=/content/drive/MyDrive/Poker_Chips_Detection_YOLO/test/images save=True
 
 ## Training
@@ -53,8 +48,7 @@ Evaluation with validation images to assess model accuracy.
 Training results such as confusion matrices and validation images are saved in the runs/detect/train/ directory.
 
 ### Example of Training Command:
-bash
-Copy code
+
 !yolo task=detect mode=train model=yolo11s.pt data=/content/drive/MyDrive/Poker_Chips_Detection_YOLO/data.yaml epochs=10 imgsz=640 plots=True
 ## Training Results:
 After training, several results will be saved in the directory:
@@ -64,8 +58,6 @@ Results: A summary of performance metrics.
 Validation Predictions: The first batch of predictions on validation data.
 You can view the results using the following commands in a Jupyter notebook:
 
-python
-Copy code
 from IPython.display import Image as IPyImage
 
 IPyImage(filename='runs/detect/train/confusion_matrix.png', width=600)
@@ -76,14 +68,11 @@ After training, the model can be used to make predictions on test images. The tr
 
 Example command for inference:
 
-bash
-Copy code
+
 !yolo task=detect mode=predict model=runs/detect/train/weights/best.pt conf=0.25 source=/content/drive/MyDrive/Poker_Chips_Detection_YOLO/test/images save=True
 ## Results Visualization:
 You can examine the prediction results using the following code:
 
-python
-Copy code
 import glob
 import os
 from IPython.display import Image as IPyImage, display
