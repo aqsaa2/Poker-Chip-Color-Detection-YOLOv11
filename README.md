@@ -75,19 +75,35 @@ Example command for inference:
 You can examine the prediction results using the following code:
 
 import glob
+
+
 import os
+
+
 from IPython.display import Image as IPyImage, display
 
 latest_folder = max(glob.glob('/content/runs/detect/predict*/'), key=os.path.getmtime)
+
+
 for img in glob.glob(f'{latest_folder}/*.jpg')[:3]:
+
+
     display(IPyImage(filename=img, width=600))
+
+    
     print("\n")
+
+    
 This will display the top 3 prediction results with poker chip color detections.
 
 ## Results
 After training and inference, the results are visualized through several plots:
 
 Confusion Matrix: Displays the classification accuracy for each chip color.
+
+
 Validation Results: Visualizes how well the model performs on unseen data.
+
+
 Predictions: Example images with overlaid chip color detections.
 
