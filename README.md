@@ -44,8 +44,14 @@ For predicting poker chip colors in test images:
 The model was trained using a custom dataset containing images of various poker chips. The training process involves the following steps:
 
 Data preprocessing and augmentation to ensure the model generalizes well.
+
+
 Custom model fine-tuning with the YOLOv11 architecture.
+
+
 Evaluation with validation images to assess model accuracy.
+
+
 Training results such as confusion matrices and validation images are saved in the runs/detect/train/ directory.
 
 ### Example of Training Command:
@@ -55,14 +61,24 @@ Training results such as confusion matrices and validation images are saved in t
 After training, several results will be saved in the directory:
 
 Confusion Matrix: A visualization of the model's classification accuracy.
+
+
 Results: A summary of performance metrics.
+
+
 Validation Predictions: The first batch of predictions on validation data.
+
+
 You can view the results using the following commands in a Jupyter notebook:
 
 from IPython.display import Image as IPyImage
 
 IPyImage(filename='runs/detect/train/confusion_matrix.png', width=600)
+
+
 IPyImage(filename='runs/detect/train/results.png', width=600)
+
+
 IPyImage(filename='runs/detect/train/val_batch0_pred.jpg', width=600)
 ## Inference
 After training, the model can be used to make predictions on test images. The trained model will classify poker chip colors based on input images. Predictions are saved and can be reviewed as visualized output files like results.png and val_batch0_pred.jpg.
