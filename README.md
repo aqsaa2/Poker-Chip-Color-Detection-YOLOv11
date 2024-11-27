@@ -22,8 +22,9 @@ Follow these steps to set up the project locally:
 1. **Install the required dependencies:**
 
 Install Ultralytics library
-Make sure you have Python 3.x and pip installed.
-or simply use google colab
+
+
+Make sure you have Python 3.x and pip installed or simply use google colab
 
 2. **Set up the YOLOv11 model and datasets as specified in the repository.**
 
